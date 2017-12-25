@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier \"*/**/*.js\" --ignore-path ./.prettierignore --write && git add . && git status"
   },
+  "pre-commit": [
+    "prettier"
+  ],
   "author": "Redis CA",
   "license": "ISC",
   "devDependencies": {
+    "pre-commit": "^1.2.2",
     "prettier": "1.9.2"
   }
 }
