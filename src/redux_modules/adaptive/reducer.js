@@ -20,10 +20,10 @@ export default function(state = getDefaultState(), action = {}) {
             return { ...state, isTablet: true };
 
         case SET_IS_LANDSCAPE:
-            return { ...state, isLandscape: value };
+            return { ...state, isLandscape: action.value };
 
         case SET_IS_PRODUCTION:
-            return { ...state, isProduction: value };
+            return { ...state, isProduction: action.value };
     }
     return state;
 }
