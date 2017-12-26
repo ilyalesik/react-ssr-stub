@@ -10,6 +10,7 @@
     * Redux-Saga
     * Reselect
 * Styled-components
+* Lodash
     
 #### Server-side
 * Node >= 8, npm >= 7

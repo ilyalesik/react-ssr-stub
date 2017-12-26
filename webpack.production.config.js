@@ -1,5 +1,6 @@
 var webpack = require("webpack");
 var path = require("path");
+var LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
 
 var BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
     .BundleAnalyzerPlugin;
@@ -30,6 +31,7 @@ module.exports = {
     },
     plugins: [
         //new BundleAnalyzerPlugin(),
+        new LodashModuleReplacementPlugin(),
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ru/),
         new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
