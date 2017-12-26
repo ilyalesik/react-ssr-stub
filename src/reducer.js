@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import adaptive from "./redux_modules/adaptive";
+import adaptive from "./redux_modules/adaptive/reducer";
 import { routerReducer } from "react-router-redux";
 
 export default combineReducers({

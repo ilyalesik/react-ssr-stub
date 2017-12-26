@@ -15,5 +15,24 @@
   "devDependencies": {
     "pre-commit": "^1.2.2",
     "prettier": "1.9.2"
+  },
+  "dependencies": {
+    "es6-promise": "^4.2.2",
+    "exenv": "^1.2.2",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery-param": "^0.2.0",
+    "mobile-detect": "^1.4.1",
+    "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-addons-transition-group": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-responsive": "^4.0.3",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-saga": "^0.16.0",
+    "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.1"
   }
 }
