@@ -11,7 +11,7 @@ import thunkMiddleware from "redux-thunk";
 import { Provider } from "react-redux";
 import reducer from "./reducer";
 import MobileDetect from "mobile-detect";
-import { detectUserAgent, setIsProduction } from "./action_creators/adaptive";
+import { detectUserAgent, setIsProduction } from "./redux_modules/adaptive";
 import { routes } from "./api/routes";
 import createSagaMiddleware from "redux-saga";
 import { fetchComponentData } from "./sagas/routes";
