@@ -3,6 +3,7 @@
 ### Старт
 ```bash
 $ git clone git@bitbucket.org:redisca/react-ssr-stub.git <your-project-name>
+$ cd <your-project-name>
 $ git remote set-url origin git@bitbucket.org:redisca/<your-project-name>.git
 ```
 
