@@ -17,7 +17,7 @@ import {
 } from "./redux_modules/adaptive/action_creators";
 import { routes } from "./api/routes";
 import createSagaMiddleware from "redux-saga";
-import { fetchComponentData } from "./sagas/routes";
+import { fetchComponentData } from "./redux_modules/routes/sagas";
 
 const app = new express();
 
