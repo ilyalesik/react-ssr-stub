@@ -13,12 +13,12 @@ import { ConnectedRouter, routerMiddleware } from "react-router-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga";
 
+import App from "./App";
+import { locationChangeSaga } from "./redux_modules/routes/sagas";
+
 const history = createHistory();
 const initialState = window.__INITIAL_STATE__;
 const sagaMiddleware = createSagaMiddleware();
-
-import App from "./App";
-import { locationChangeSaga } from "./redux_modules/routes/sagas";
 
 const store = createStore(
     reducer,

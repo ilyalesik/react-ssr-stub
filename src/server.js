@@ -58,6 +58,9 @@ app.use((req, res) => {
                 </Provider>
             )
         );
+        if (context.status) {
+            res.status(context.status);
+        }
         const styleTags = sheet.getStyleTags();
         const initialState = store.getState();
 
