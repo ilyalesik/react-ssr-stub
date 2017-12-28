@@ -20,9 +20,5 @@ const template = _.template(`
     </html>
 `);
 
-export const Server = ({
-    componentHTML,
-    isProduction,
-    styleTags,
-    initialState
-}) => template({ componentHTML, isProduction, styleTags, initialState });
+export const Server = ({ componentHTML, isProduction, styleTags, initialState }) =>
+    template({ componentHTML, isProduction, styleTags, initialState });

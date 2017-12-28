@@ -29,17 +29,13 @@ class OrientationDetector extends React.PureComponent {
         return (
             <div>
                 {ExecutionEnvironment.canUseDOM ? (
-                    <MediaQuery query="(orientation: portrait)">
-                        {this.detectPortrait}
-                    </MediaQuery>
+                    <MediaQuery query="(orientation: portrait)">{this.detectPortrait}</MediaQuery>
                 ) : (
                     <div />
                 )}
 
                 {ExecutionEnvironment.canUseDOM ? (
-                    <MediaQuery query="(orientation: landscape)">
-                        {this.detectLandscape}
-                    </MediaQuery>
+                    <MediaQuery query="(orientation: landscape)">{this.detectLandscape}</MediaQuery>
                 ) : (
                     <div />
                 )}

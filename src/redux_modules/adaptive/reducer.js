@@ -1,10 +1,4 @@
-import {
-    SET_IS_DESKTOP,
-    SET_IS_LANDSCAPE,
-    SET_IS_PHONE,
-    SET_IS_PRODUCTION,
-    SET_IS_TABLET
-} from "./action_creators";
+import { SET_IS_DESKTOP, SET_IS_LANDSCAPE, SET_IS_PHONE, SET_IS_PRODUCTION, SET_IS_TABLET } from "./action_creators";
 
 function getDefaultState() {
     return {};

@@ -23,13 +23,7 @@ import { locationChangeSaga } from "./redux_modules/routes/sagas";
 const store = createStore(
     reducer,
     initialState, // Hydrate the store with server-side data
-    composeWithDevTools(
-        applyMiddleware(
-            routerMiddleware(history),
-            thunkMiddleware,
-            sagaMiddleware
-        )
-    )
+    composeWithDevTools(applyMiddleware(routerMiddleware(history), thunkMiddleware, sagaMiddleware))
 );
 
 sagaMiddleware.run(locationChangeSaga);

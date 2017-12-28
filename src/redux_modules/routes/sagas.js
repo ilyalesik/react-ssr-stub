@@ -5,10 +5,7 @@ import { matchPath } from "react-router-dom";
 
 export function* fetchComponentData(matches) {
     const needs = matches.reduce((prev, current) => {
-        return [
-            ...prev,
-            ...current.route.needs.map(need => fork(need, current.match.params))
-        ];
+        return [...prev, ...current.route.needs.map(need => fork(need, current.match.params))];
     }, []);
 
     yield all(needs);
