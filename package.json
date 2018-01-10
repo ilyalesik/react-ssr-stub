@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "production": "node indexProduction.js",
+    "dev": "node .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier \"*/**/*.js\" --ignore-path ./.prettierignore --write && git add . && git status"
   },
