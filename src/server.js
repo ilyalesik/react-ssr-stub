@@ -30,6 +30,35 @@ if (!isProduction) {
 app.use("/public", express.static("./public"));
 app.use("/fonts", express.static("./fonts"));
 
+const renderView = (req, res, store) => {
+    const context = {};
+    const sheet = new ServerStyleSheet();
+    const componentHTML = ReactDOMServer.renderToString(
+        sheet.collectStyles(
+            <Provider store={store}>
+                <StaticRouter location={req.url} context={context}>
+                    <App />
+                </StaticRouter>
+            </Provider>
+        )
+    );
+    if (context.status) {
+        res.status(context.status);
+    }
+    const styleTags = sheet.getStyleTags();
+    const initialState = store.getState();
+
+    const html = Server({
+        componentHTML,
+        isProduction,
+        styleTags,
+        initialState
+    });
+
+    res.set("Content-Type", "text/html");
+    res.send(html);
+};
+
 app.use((req, res) => {
     const sagaMiddleware = createSagaMiddleware();
     const store = createStore(reducer, applyMiddleware(thunkMiddleware, sagaMiddleware));
@@ -46,34 +75,14 @@ app.use((req, res) => {
         }
     });
 
-    sagaMiddleware.run(fetchComponentData, matches).done.then(() => {
-        const context = {};
-        const sheet = new ServerStyleSheet();
-        const componentHTML = ReactDOMServer.renderToString(
-            sheet.collectStyles(
-                <Provider store={store}>
-                    <StaticRouter location={req.url} context={context}>
-                        <App />
-                    </StaticRouter>
-                </Provider>
-            )
-        );
-        if (context.status) {
-            res.status(context.status);
-        }
-        const styleTags = sheet.getStyleTags();
-        const initialState = store.getState();
-
-        const html = Server({
-            componentHTML,
-            isProduction,
-            styleTags,
-            initialState
+    sagaMiddleware
+        .run(fetchComponentData, matches)
+        .done.then(() => {
+            return renderView(req, res, store);
+        })
+        .catch(() => {
+            return renderView(req, res, store);
         });
-
-        res.set("Content-Type", "text/html");
-        res.send(html);
-    });
 });
 
 const PORT = process.env.PORT || 3000;
