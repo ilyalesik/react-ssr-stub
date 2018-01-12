@@ -4,7 +4,7 @@ import { colors } from "./Constants";
 import { rgba } from "polished";
 
 export const Button = styled.button`
-    border: 1px solid black;
+    border: 1px solid ${colors.black};
     box-sizing: border-box;
     display: inline-block;
     font-family: Helvetica, sans-serif;
