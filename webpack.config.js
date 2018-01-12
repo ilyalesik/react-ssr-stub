@@ -12,7 +12,7 @@ export default function(app) {
             contentBase: "./dist",
             hot: true
         },
-        entry: ["babel-polyfill", "webpack-hot-middleware/client", "./src/index.js"],
+        entry: ["react-hot-loader/patch", "babel-polyfill", "webpack-hot-middleware/client", "./src/index.js"],
         output: {
             filename: "bundle.js",
             path: path.resolve(__dirname, "dist"),
