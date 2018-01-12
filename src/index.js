@@ -15,8 +15,6 @@ import createSagaMiddleware from "redux-saga";
 
 import App from "./App";
 import { locationChangeSaga } from "./redux_modules/routes/sagas";
-import { AppContainer } from "react-hot-loader";
-
 const history = createHistory();
 const initialState = window.__INITIAL_STATE__;
 const sagaMiddleware = createSagaMiddleware();
@@ -29,24 +27,11 @@ const store = createStore(
 
 sagaMiddleware.run(locationChangeSaga);
 
-const render = Component => {
-    ReactDOM.hydrate(
-        <AppContainer>
-            <Provider store={store}>
-                <ConnectedRouter history={history}>
-                    <Component />
-                </ConnectedRouter>
-            </Provider>
-        </AppContainer>,
-        document.getElementById("root")
-    );
-};
-
-render(App);
-
-// Webpack Hot Module Replacement API
-if (module.hot) {
-    module.hot.accept("./App", () => {
-        render(App);
-    });
-}
+ReactDOM.hydrate(
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <App />
+        </ConnectedRouter>
+    </Provider>,
+    document.getElementById("root")
+);

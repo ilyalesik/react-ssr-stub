@@ -12,7 +12,7 @@ export default function(app) {
             contentBase: "./dist",
             hot: true
         },
-        entry: ["react-hot-loader/patch", "babel-polyfill", "webpack-hot-middleware/client", "./src/index.js"],
+        entry: ["babel-polyfill", "webpack-hot-middleware/client", "./src/index.js"],
         output: {
             filename: "bundle.js",
             path: path.resolve(__dirname, "dist"),
@@ -23,7 +23,7 @@ export default function(app) {
                 {
                     test: /\.js$/,
                     exclude: /(node_modules)/,
-                    use: ["react-hot-loader/webpack", "babel-loader"]
+                    use: ["babel-loader"]
                 },
                 {
                     test: /\.(png|svg|jpg|gif|otf|woff|eot)$/,

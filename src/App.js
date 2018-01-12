@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import OrientationDetector from "./components/orientation-detector/OrientationDetector";
 import HomePage from "./components/home-page/HomePage";
 import ErrorPage from "./components/error-page/ErrorPage";
+import { hot } from "react-hot-loader";
 
 class App extends Component {
     render() {
@@ -28,4 +29,4 @@ class App extends Component {
 
 const mapStateToProps = (state, ownProps) => ({ isNotFound: state.notfound.isNotFound });
 
-export default withRouter(connect(mapStateToProps)(App));
+export default hot(module)(withRouter(connect(mapStateToProps)(App)));
