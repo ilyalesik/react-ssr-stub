@@ -3,8 +3,7 @@ import path from "path";
 import webpackDevMiddleware from "webpack-dev-middleware";
 import webpackHotMiddleware from "webpack-hot-middleware";
 
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-    .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 export default function(app) {
     const config = {
@@ -13,11 +12,7 @@ export default function(app) {
             contentBase: "./dist",
             hot: true
         },
-        entry: [
-            "babel-polyfill",
-            "webpack-hot-middleware/client",
-            "./src/index.js"
-        ],
+        entry: ["babel-polyfill", "webpack-hot-middleware/client", "./src/index.js"],
         output: {
             filename: "bundle.js",
             path: path.resolve(__dirname, "dist"),
@@ -28,7 +23,7 @@ export default function(app) {
                 {
                     test: /\.js$/,
                     exclude: /(node_modules)/,
-                    use: ["react-hot-loader", "babel-loader"]
+                    use: ["react-hot-loader/webpack", "babel-loader"]
                 },
                 {
                     test: /\.(png|svg|jpg|gif|otf|woff|eot)$/,
