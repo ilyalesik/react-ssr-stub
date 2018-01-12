@@ -1,5 +1,6 @@
 export const colors = {
     white: "#ffffff",
+    black: "#000000",
 
     errorColor: "#d0021b"
 };

@@ -7,7 +7,9 @@
     "production": "node indexProduction.js",
     "dev": "node .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "prettier \"*/**/*.js\" --ignore-path ./.prettierignore --write && git add . && git status"
+    "prettier": "prettier \"*/**/*.js\" --ignore-path ./.prettierignore --write && git add . && git status",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "pre-commit": [
     "prettier"
@@ -39,7 +41,10 @@
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-middleware": "^2.0.3",
     "webpack-dev-server": "^2.9.7",
-    "webpack-hot-middleware": "^2.21.0"
+    "webpack-hot-middleware": "^2.21.0",
+    "@storybook/react": "^3.3.8",
+    "@storybook/addon-actions": "^3.3.8",
+    "@storybook/addon-links": "^3.3.8"
   },
   "dependencies": {
     "es6-promise": "^4.2.2",
@@ -48,6 +53,7 @@
     "jquery-param": "^0.2.0",
     "lodash": "^4.17.4",
     "mobile-detect": "^1.4.1",
+    "polished": "^1.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
