@@ -27,8 +27,7 @@ $ git remote set-url origin git@bitbucket.org:redisca/<your-project-name>.git
 * Webpack
 * Тестирование: mocha, chai
 * Форматирование кода: prettier
-    
-
+* Просмотр доступных компонентов: storybook  
 
 ## Запуск production
 ```bash
@@ -42,4 +41,14 @@ $ npm run production
 ```bash
 $ npm i
 $ npm run dev
+```
+
+## Установка storybook
+```bash
+$ npm i -g @storybook/cli
+```
+
+## Запуск storybook
+```bash
+$ npm run storybook
 ```
