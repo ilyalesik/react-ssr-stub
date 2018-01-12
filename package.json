@@ -17,6 +17,10 @@
   "author": "Redis CA",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/addon-actions": "^3.3.8",
+    "@storybook/addon-info": "^3.3.8",
+    "@storybook/addon-links": "^3.3.8",
+    "@storybook/react": "^3.3.8",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -41,10 +45,7 @@
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-middleware": "^2.0.3",
     "webpack-dev-server": "^2.9.7",
-    "webpack-hot-middleware": "^2.21.0",
-    "@storybook/react": "^3.3.8",
-    "@storybook/addon-actions": "^3.3.8",
-    "@storybook/addon-links": "^3.3.8"
+    "webpack-hot-middleware": "^2.21.0"
   },
   "dependencies": {
     "es6-promise": "^4.2.2",
