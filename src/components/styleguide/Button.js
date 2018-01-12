@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "./Constants";
+import { rgba } from "polished";
 
 export const Button = styled.button`
     border: 1px solid black;
@@ -8,7 +9,7 @@ export const Button = styled.button`
     display: inline-block;
     font-family: Helvetica, sans-serif;
     font-size: 18px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: ${rgba(colors.black, 0)};
     cursor: pointer;
     text-decoration: none;
     padding: 10px 20px;
@@ -19,6 +20,6 @@ export const Button = styled.button`
 
     :hover,
     :focus {
-        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.09);
+        box-shadow: 0 5px 5px 0 ${rgba(colors.black, 0.09)};
     }
 `;

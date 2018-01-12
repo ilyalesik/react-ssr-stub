@@ -53,6 +53,7 @@
     "jquery-param": "^0.2.0",
     "lodash": "^4.17.4",
     "mobile-detect": "^1.4.1",
+    "polished": "^1.9.0",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",
