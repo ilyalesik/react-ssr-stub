@@ -7,6 +7,17 @@ $ cd <your-project-name>
 $ git remote set-url origin git@bitbucket.org:redisca/<your-project-name>.git
 ```
 
+### Фетч данных для роута
+Для фетча данных роута нужно прописать в api/routes.js его зависимости.
+В needs передаются таски redux-saga.
+Пример: 
+```js
+{
+        path: "/dashboard",
+        needs: [fetchDashboardItems]
+}
+```
+
 ## Зависимости
 
 #### Client-side
